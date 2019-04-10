@@ -34,6 +34,7 @@
     [p1 categoryTest];
     [self printMethodNamesOfClass:[Person class]];
     [self maxCountTest];
+    [self printPaths];
 }
 
 
@@ -84,5 +85,9 @@
     NSLog(@"%@ - %@", cls, methodNames);
 }
 
+
+- (void)printPaths {
+    NSLog(@"Home地址:%@",NSHomeDirectory());
+}
 
 @end
