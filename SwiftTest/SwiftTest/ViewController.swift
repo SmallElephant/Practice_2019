@@ -46,7 +46,8 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        testForInteration1()
+//        testForInteration1()
+        testCache()
     }
     
     func test() {
@@ -90,8 +91,19 @@ class ViewController: UIViewController {
 //        let allResults = results.flatMap { $0 }
 //        print("\(allResults)")
         
-        let names: [String?] = ["Tom", nil, "Peter", nil, "Harry"]
-        let valid = names.flatMap { $0 }
+//        let names: [String?] = ["Tom", nil, "Peter", nil, "Harry"]
+//        let valid = names.flatMap { $0 }
+    }
+    
+    func testCache() {
+        let cache = LRUCache(3)
+        cache.setValue(10, value: "Fly")
+        cache.setValue(2, value: "Elephant")
+        cache.setValue(5, value: "FlyElephant")
+        cache.printList()
+        cache.setValue(25, value: "Cache")
+        cache.setValue(5, value: "FlyElephant")
+        cache.printList()
     }
 
 

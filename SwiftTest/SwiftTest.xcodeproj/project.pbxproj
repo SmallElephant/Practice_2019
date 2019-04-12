@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DABC2030226058A600FDFD77 /* LRU.swift in Sources */ = {isa = PBXBuildFile; fileRef = DABC202F226058A600FDFD77 /* LRU.swift */; };
 		DAE5B2CA225CC31400E99225 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE5B2C9225CC31400E99225 /* AppDelegate.swift */; };
 		DAE5B2CC225CC31400E99225 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE5B2CB225CC31400E99225 /* ViewController.swift */; };
 		DAE5B2CF225CC31400E99225 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DAE5B2CD225CC31400E99225 /* Main.storyboard */; };
@@ -34,6 +35,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		DABC202F226058A600FDFD77 /* LRU.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LRU.swift; sourceTree = "<group>"; };
 		DAE5B2C6225CC31400E99225 /* SwiftTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DAE5B2C9225CC31400E99225 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DAE5B2CB225CC31400E99225 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -103,6 +105,7 @@
 				DAE5B2D0225CC31500E99225 /* Assets.xcassets */,
 				DAE5B2D2225CC31500E99225 /* LaunchScreen.storyboard */,
 				DAE5B2D5225CC31500E99225 /* Info.plist */,
+				DABC202F226058A600FDFD77 /* LRU.swift */,
 			);
 			path = SwiftTest;
 			sourceTree = "<group>";
@@ -256,6 +259,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DABC2030226058A600FDFD77 /* LRU.swift in Sources */,
 				DAE5B2CC225CC31400E99225 /* ViewController.swift in Sources */,
 				DAE5B2CA225CC31400E99225 /* AppDelegate.swift in Sources */,
 			);
