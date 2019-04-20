@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DA5CD32B226AC0ED00B967E7 /* UserView.m in Sources */ = {isa = PBXBuildFile; fileRef = DA5CD32A226AC0ED00B967E7 /* UserView.m */; };
 		DABC203F2260966500FDFD77 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DABC203E2260966500FDFD77 /* AppDelegate.m */; };
 		DABC20422260966500FDFD77 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DABC20412260966500FDFD77 /* ViewController.m */; };
 		DABC20452260966500FDFD77 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DABC20432260966500FDFD77 /* Main.storyboard */; };
@@ -36,6 +37,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		DA5CD329226AC0ED00B967E7 /* UserView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserView.h; sourceTree = "<group>"; };
+		DA5CD32A226AC0ED00B967E7 /* UserView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UserView.m; sourceTree = "<group>"; };
 		DABC203A2260966500FDFD77 /* BlockDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BlockDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DABC203D2260966500FDFD77 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		DABC203E2260966500FDFD77 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -115,6 +118,8 @@
 				DABC204C2260966800FDFD77 /* main.m */,
 				DABC20B2226191B200FDFD77 /* User.h */,
 				DABC20B3226191B200FDFD77 /* User.m */,
+				DA5CD329226AC0ED00B967E7 /* UserView.h */,
+				DA5CD32A226AC0ED00B967E7 /* UserView.m */,
 			);
 			path = BlockDemo;
 			sourceTree = "<group>";
@@ -270,6 +275,7 @@
 				DABC20B4226191B200FDFD77 /* User.m in Sources */,
 				DABC20422260966500FDFD77 /* ViewController.m in Sources */,
 				DABC204D2260966800FDFD77 /* main.m in Sources */,
+				DA5CD32B226AC0ED00B967E7 /* UserView.m in Sources */,
 				DABC203F2260966500FDFD77 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

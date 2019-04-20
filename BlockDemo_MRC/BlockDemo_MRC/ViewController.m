@@ -1,21 +1,24 @@
 //
 //  ViewController.m
-//  BlockDemo
+//  BlockDemo_MRC
 //
-//  Created by FlyElephant on 2019/4/12.
+//  Created by FlyElephant on 2019/4/20.
 //  Copyright © 2019 FlyElephant. All rights reserved.
 //
 
 #import "ViewController.h"
 #import "UserView.h"
 
+int gloabal = 10;
+void (^globalBlock)() = ^ {
+    NSLog(@"%d",gloabal);
+};
+
 @interface ViewController ()
 
-@property (assign, nonatomic) NSInteger age;
+@property (strong, nonatomic) UIButton *button;
 
 @property (copy, nonatomic) void(^netBlock)();
-
-@property (strong, nonatomic) UIButton *button;
 @property (strong, nonatomic) UserView *userView;
 
 @end
@@ -25,21 +28,17 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-//    [self test];
 //    [self showBlockType];
     [self setupUI];
 }
 
-- (void)test {
-    __block int val = 0;
-    void (^blk)(void) = [^{++val;} copy];
-    ++val;
-    blk();
-    NSLog(@"%d", val);
+- (void)dealloc {
+    [super dealloc];
 }
 
 - (void)showBlockType {
-    int num = 10;
+    NSLog(@"%@",globalBlock);
+    int num = 25;
     // __NSGlobalBlock
     NSLog(@"block---%@",^{
         NSLog(@"test");
@@ -48,38 +47,38 @@
     void (^block1)() = ^{
         NSLog(@"block test");
     };
-    NSLog(@"block---%@",block1);
+    NSLog(@"block---%@ 引用计数：%ld",block1,[block1 retainCount]);
     
     // __NSStackBlock
     NSLog(@"block---%@",^{
         NSLog(@"block %d",num);
     });
-    // __NSMallocBlock
+    // __NSStackBlock
     void (^block2)() = ^{
         NSLog(@"%d",num);
     };
-    NSLog(@"block---%@",block2);
-    
+    NSLog(@"block---%@ 引用计数：%ld",block2,[block2 retainCount]);
     // __NSGlobalBlock
     self.netBlock = ^{
         NSLog(@"net block");
     };
-    NSLog(@"block---%@",self.netBlock);
+    NSLog(@"block---%@ 引用计数：%ld",self.netBlock,[self.netBlock retainCount]);
     // __NSMallocBlock
     self.netBlock = ^{
         NSLog(@"net block--%d",num);
     };
-    NSLog(@"block---%@",self.netBlock);
+    NSLog(@"block---%@ 引用计数：%ld",self.netBlock,[self.netBlock retainCount]);
+
 }
 
 - (void)blockTest:(UIButton *)sender {
-//    NSLog(@"entry blockTest");
-//    NSLog(@"copy block:%@",self.userView.copyBlock);
-//    self.userView.copyBlock();
-//    NSLog(@"strong block:%@---retaincount:%ld",self.userView.strongBlock,[self.userView.strongBlock retainCount]);
-//    self.userView.strongBlock();
-//    NSLog(@"retain block:%@---retaincount:%ld",self.userView.retainBlock,[self.userView.retainBlock retainCount]);
-//    self.userView.retainBlock();
+    NSLog(@"entry blockTest");
+    NSLog(@"strong block:%@---retaincount:%ld",self.userView.strongBlock,[self.userView.strongBlock retainCount]);
+    self.userView.strongBlock();
+    NSLog(@"copy block:%@---retaincount:%ld",self.userView.copyBlock,[self.userView.copyBlock retainCount]);
+    self.userView.copyBlock();
+    NSLog(@"retain block:%@---retaincount:%ld",self.userView.retainBlock,[self.userView.retainBlock retainCount]);
+    self.userView.retainBlock();
 }
 
 - (void)setupUI {
@@ -99,7 +98,7 @@
     };
     NSLog(@"%@",block1);
     void (^block2)() = ^ {
-        NSLog(@"FlyElephant---%d",val++);
+         NSLog(@"FlyElephant---%d",val++);
     };
     NSLog(@"%@",block2);
     void (^block3)() = ^ {
@@ -109,9 +108,9 @@
     self.userView.strongBlock = block1;
     self.userView.copyBlock = block2;
     self.userView.retainBlock = block3;
-    NSLog(@"strong block:%@",self.userView.strongBlock);
-    NSLog(@"copy block:%@",self.userView.copyBlock);
-    NSLog(@"retain block:%@",self.userView.retainBlock);
+    NSLog(@"strong block:%@---retaincount:%ld",self.userView.strongBlock,[self.userView.strongBlock retainCount]);
+    NSLog(@"copy block:%@---retaincount:%ld",self.userView.copyBlock,[self.userView.copyBlock retainCount]);
+    NSLog(@"retain block:%@---retaincount:%ld",self.userView.retainBlock,[self.userView.retainBlock retainCount]);
 }
 
 @end

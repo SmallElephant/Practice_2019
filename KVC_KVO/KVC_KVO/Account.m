@@ -10,6 +10,10 @@
 
 @implementation Account
 
++ (BOOL)accessInstanceVariablesDirectly {
+    return YES;
+}
+
 - (void)setPassword:(NSString *)password {
 //    [self willChangeValueForKey:@"password"];
 //    [super setValue:password forKeyPath:@"password"];
